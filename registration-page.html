@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/registration-page.css">
+    <title>Registration</title>
+</head>
+<body>
+
+<div class="registration-page">
+    <div class="form">
+
+        <a href="index.html"><img src="img/logoPS.png" alt="Site-logo.img" width="100" class="logo"></a>
+          <form  id="registration-form" class="registration-form" method="POST" action="http://localhost:8080" role="form" name="register">
+            <input type="text" name="name" placeholder="Username" required autocomplete="username">
+            <input type="email" name="email" placeholder="Email" required autocomplete="email">
+
+            <div class="password-container">
+             <input type="password" placeholder="Password" required id="password" name="password" onchange="checkPassword(this)" autocomplete="new-password">
+             <button type="button" onclick="togglePassword('password')" class="toggle-btn">      
+             <i class="fas fa-eye"></i>
+            </button>
+            <div id="password-message" class="message"></div>
+            </div>
+
+            <div class="password-container">
+             <input type="password" placeholder="Confirm Password" required id="confirm_password" name="confirm_password">
+             <button type="button" onclick="togglePassword('confirm_password')" class="toggle-btn">
+             <i class="fas fa-eye"></i>
+             </button>
+            </div>
+
+            <button type="submit" value="submit" id="registration" class="registration" onclick="checkPassword(event)">Register</button>
+            <p class="messagee">Already registered? <a href="login-register.html">Sign In</a></p>
+          </form>
+
+<script>
+
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Get the form data
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+
+    // Create a new file and write the data to it
+    $file = fopen("submissions.txt", "a");
+    fwrite($file, "Name: $name\nEmail: $email\n\n");
+    fclose($file);
+}
+
+ function togglePassword(inputId) {
+    var passwordInput = document.getElementById(inputId);
+     var currentType = passwordInput.getAttribute("type");
+        if (currentType === "password") {
+          passwordInput.setAttribute("type", "text");
+        var btn = passwordInput.nextElementSibling;
+            btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        } else {
+            passwordInput.setAttribute("type", "password");
+        var btn = passwordInput.nextElementSibling;
+            btn.innerHTML = '<i class="fas fa-eye"></i>';
+         }
+      }
+        
+        document.getElementById("registration").addEventListener("click", function(event){
+         checkPassword(event);
+        });
+
+function checkPassword(event) {
+    event.preventDefault();
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+    var message = document.getElementById("password-message");
+    var valid = true;
+    if (password !== confirmPassword) {
+        message.innerHTML = "Confirmed password don't match.";
+        valid = false;
+    }else{
+    var minLength = 8;
+    var minLowerCase = 1;
+    var minUpperCase = 1;
+    var minNumeric = 1;
+    var minSpecial = 1;
+    var lowerCase = /[a-z]/g;
+    var upperCase = /[A-Z]/g;
+    var numeric = /[0-9]/g;
+    var special = /[!@#$%^&*(),.?":{}|<>]/g;
+    var length = password.length;
+    var countLowerCase = (password.match(lowerCase) || []).length;
+    var countUpperCase = (password.match(upperCase) || []).length;
+    var countNumeric = (password.match(numeric) || []).length;
+    var countSpecial = (password.match(special) || []).length;
+    message.innerHTML = "";
+    if (length < minLength) {
+        message.innerHTML += "Password must be at least " + minLength + " characters long.<br>";
+        valid = false;
+    }
+    if (countLowerCase < minLowerCase) {
+        message.innerHTML += "Password must contain at least " + minLowerCase + " lowercase letter.<br>";
+        valid = false;
+    }
+    if (countUpperCase < minUpperCase) {
+        message.innerHTML += "Password must contain at least " + minUpperCase + " uppercase letter.<br>";
+        valid = false;
+    }
+    if (countNumeric < minNumeric) {
+        message.innerHTML += "Password must contain at least " + minNumeric + " numeric character.<br>";
+        valid = false;
+    }
+    if (countSpecial < minSpecial) {
+        message.innerHTML += "Password must contain at least " + minSpecial + " special character.<br>";
+        valid = false;
+    }
+}
+    if (valid) {
+        document.getElementById("registration-form").submit();
+    }else{
+        message.style.display = "block";
+        setTimeout(function(){ message.style.display = "none"; }, 5000);
+    }
+}
+</script>
+
+    </div>
+</div>
+
+</body>
+</html>
