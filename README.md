@@ -14,7 +14,7 @@ We are confident that you will find Reach the Writers to be a valuable resource 
 
 Thank you for considering Reach the Writers for your content creation needs!
 
-2. What i'm woking on and what I've done?
+2. What i'm working on and what I've done?
 
 I've been hard at work on the project and have made significant progress on the front end development. I've been putting in a lot of effort to make sure that the user experience is top-notch and have a little bit left to finish it fully.
 
