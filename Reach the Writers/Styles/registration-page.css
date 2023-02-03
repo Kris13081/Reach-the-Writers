@@ -1,0 +1,133 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+html {
+    background-image: url(/img/logo-page-photo.jpg);
+  }
+  
+  /* Login Page */
+  .registration-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+  
+  /* Form */
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #ffffff54;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 30px;
+  }
+  
+  /* Input fields */
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .logo {
+    padding-bottom: 15px;
+  }
+  
+  /* Submit button */
+  .form .registration {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #03afff70;
+    width: 50%;
+    border: 0;
+    border-radius: 30px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-style: italic;
+    cursor: pointer;
+  }
+  
+  /* Submit button on hover */
+  .form .registration:hover,.form .registration:active,.form .registration:focus {
+    background: #020302;
+  }
+  
+  /* Message */
+  .form .message {
+    margin: 15px 0 0;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  .form .messagee a {
+    color: #03afff;
+    text-decoration: none;
+  }
+  
+  /* Main Content */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+
+  .password-container {
+    position: relative;
+  }
+  
+  .password-container input[type="password"] {
+    padding-right: 30px; 
+  }
+  
+  .password-container .toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    bottom: 30px; 
+    margin: auto;
+  }
+
+  .toggle-btn {
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    background-color: rgba(251, 251, 251, 0);
+    border: none;
+  }
+  
+  .message {
+    font-family: 'Trebuchet MS', serif;
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    background-color: #494545b9;
+    border-radius: 0 10px 10px 10px;
+    color: white;
+    right: -330px; 
+    top: 10px;
+    text-align:left;
+    display: none;
+    border: 2px solid rgb(4, 173, 224);
+  }
+
+

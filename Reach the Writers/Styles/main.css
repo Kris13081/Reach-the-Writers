@@ -1,0 +1,427 @@
+html {
+  border: 5px solid white;
+}
+
+  body {
+    color: whitesmoke;
+}
+
+  a {
+    color: aliceblue;
+}
+
+  a:visited {
+     color: lightgray;
+}
+
+  a:hover, a:active {
+    color: #eee;
+}
+
+  a {
+  text-decoration: none;
+}
+
+  input[type="text"] {
+    color: #eee;
+}
+
+  input[type="text"] {
+    background-color: #333;
+}
+
+  option[disabled] {
+    display: none;
+}
+
+
+footer {
+  border: 1px solid white;
+  background-color: rgba(51, 51, 51, 0.158);
+  border-radius: 30px;
+}
+
+
+  .image-box {
+    display: inline-block;
+    width: 225px;
+    height: 224px;
+    clip-path:circle(50%);   
+    position: relative;
+    
+}
+
+.image-box-weekly {
+  display: block;
+  width: 225px;
+  height: 224px;
+  clip-path:circle(50%);   
+  position: relative;
+}
+
+.image-box-weekly p{
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.37);
+  padding: 10px;
+  text-align: center;
+}
+
+  .image-box p {
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.37);
+  padding: 10px;
+  text-align: center;
+}
+
+.about-writing {
+display: block;
+}
+
+.footer {
+  display: inline-block;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.section-conteiner{
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.footer nav {
+  display: inline-block;
+  padding-right: 100px;
+  padding-left: 100px;
+  margin-bottom: 10px;
+}
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(36, 38, 39, 0.616);
+    text-align: center;
+    z-index: 9999;
+  }
+
+  .navbar .navbarlinks {
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 14px  35px;
+    text-decoration: none;
+    font-size: 32px;
+  }
+ 
+  .pageLogoAndMoto {   
+    width: 100%;
+  height: 40vh;
+    background-image: url('img/mainpage-moto-pic.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1 {  
+    text-align: center;
+    background-color: rgba(36, 38, 39, 0.616);
+    font-size: 54px;
+}
+
+.formTopPics {
+ 
+  margin-left: 155px;
+  width: 224px;
+  height: 225px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+}
+
+ .navbarimg {
+  float: left;
+  margin: 10px;
+}
+
+@keyframes spin {
+  from {transform: translate(-50%, -50%) rotate(0);}
+  to   {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.formTopPics{
+  --border-radius: 100%;
+  --border-bg: conic-gradient(
+    #33ffff 0.1666turn, 
+    #333 0.1666turn 0.3333turn, 
+    #33ffff 0.3333turn 0.5turn, 
+    #333 0.5turn 0.6666turn, 
+    #33ffff 0.6666turn 0.8333turn, 
+    #333 0.8333turn
+  );
+  width: 170px;
+  height: 201px;
+  text-align: center;
+}
+  .formTopPics:before {
+    content: '';
+    display: inline-block;
+    background: var(--border-bg);
+    width: calc(100% * 1.41421356237);
+    padding-bottom: calc(100% * 1.41421356237);
+    position: absolute;
+    left: 65.9%;
+    top: 55.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: -2;
+    animation: spin 40s linear infinite;
+  }
+  .formTopPics::before{
+    animation-direction: reverse;
+  }
+  .formTopPics::after{
+    content: '';
+    position: absolute;
+    inset: var(--border-size);
+    background: white;
+    z-index: -1;
+    border-radius: calc(var(--border-radius) - var(--border-size));
+  }
+
+  body {
+    background: linear-gradient(-45deg, #333, #33ffff, #333, #333);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+  }
+ 
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .navbarlinks {
+    --b: 0.1em;  
+    --c: #1095c1; 
+    
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,rgba(105, 198, 252, 0.973) 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  }
+  .navbarlinks:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+
+  .deconstructed {
+    position: relative;
+    margin: auto;
+    margin-bottom: 5%;
+    height: 0.71em;
+    color: transparent;
+    font-family: 'Cambay', sans-serif;
+    font-size: 4vw;
+    font-weight: 550;
+    letter-spacing: -0.02em;
+    line-height: 1.03em;
+  }
+  
+  .deconstructed > div {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    right: 0;
+    bottom: 0;
+    color: #ffffff;
+    pointer-events: none;
+  }
+  
+  .deconstructed > div:nth-child(1) {
+    -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+    mask-image: linear-gradient(black 25%, transparent 25%);
+    animation: deconstructed1 30s infinite;
+  }
+  
+  .deconstructed > div:nth-child(2) {
+    -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+    mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+    animation: deconstructed2 30s infinite;
+  }
+  
+  .deconstructed > div:nth-child(3) {
+     -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+    mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+    animation: deconstructed3 30s infinite;
+  }
+  
+  .deconstructed > div:nth-child(4) {
+     -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+    mask-image: linear-gradient(transparent 75%, black 75%);
+    animation: deconstructed4 30s infinite;
+  }
+  
+  @keyframes deconstructed1 {
+    0% {
+      transform: translateX(-230%);
+    }
+    26% {
+      transform: translateX(0%);
+    }
+    83% {
+      transform: translateX(-0.1%);
+    }
+    100% {
+      transform: translateX(-230%);
+    }
+  }
+  
+  @keyframes deconstructed2 {
+    0% {
+      transform: translateX(-230%);
+    }
+    24% {
+      transform: translateX(0%);
+    }
+    82% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-230%);
+    }
+  }
+  
+  @keyframes deconstructed3 {
+    0% {
+      transform: translateX(-230%);
+    }
+    22% {
+      transform: translateX(0%);
+    }
+    81% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-230%);
+    }
+  }
+  
+  @keyframes deconstructed4 {
+    0% {
+      transform: translateX(-230%);
+    }
+    20% {
+      transform: translateX(0%);
+    }
+    80% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-230%);
+    }
+  }
+
+ 
+  :root {
+    --page-background: white;
+  
+    --scrollbar-track: #333;
+    --scrollbar-thumb: rgb(2, 223, 252);
+    --scrollbar-thumb-hover: rgb(255, 255, 255);
+  
+    --scrollbar-width: 12px;
+  }
+  
+  html.dark {
+    --page-background: black;
+  
+    --scrollbar-thumb: rgb(255, 255, 255);
+    --scrollbar-thumb-hover: rgb(0, 255, 255);
+  }
+
+  * {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+  
+  *::-webkit-scrollbar {
+    width: var(--scrollbar-width); 
+    height: var(--scrollbar-width); 
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--scrollbar-width);
+    border: calc(var(--scrollbar-width) / 4) solid var(--page-background);
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+
+ .writingOfTheWeek {
+  margin-top: 100px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 30px;
+  background-color: rgba(51, 51, 51, 0.158);
+  padding: 15px ;
+  text-align: center;
+ }
+
+ .topWriters-section {
+  text-align: center;
+  margin-right: 6%;
+ }
+ 
+ .topWritersImages {
+  margin-right: auto;
+  padding-right: 75px;
+ }
+
+ h2 {
+  text-align: center;
+  font-size: 3em;
+ }
+
+ .image-box-weekly {
+  margin: auto;
+  margin-bottom: 2%;
+ }
+
+ .weekly-writing {
+  font-size: 30px;
+  width: 100%;
+ }
+
+ .weekly-writing {
+   color:white;
+ }
+ 
